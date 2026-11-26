@@ -1108,3 +1108,256 @@ footer {
     transition: none;
   }
 }
+
+
+/* EXPERTISE PAGE REFINEMENT */
+.expertise-page {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+
+.expertise-hero {
+  max-width: 900px;
+  margin-bottom: 58px;
+}
+
+.expertise-hero h1 {
+  margin-top: 24px;
+  line-height: 1.02;
+  letter-spacing: -4px;
+}
+
+.expertise-hero .page-description {
+  max-width: 540px;
+  margin-top: 22px;
+  margin-bottom: 34px;
+}
+
+.expertise-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #242424;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.expertise-toolkit {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.expertise-page .skill-category {
+  min-width: 0;
+  padding: 28px 24px 24px;
+  border: 1px solid #262626;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #111 0%, #0b0b0b 100%);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.expertise-page .category-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 116px;
+}
+
+.expertise-page .category-heading .skill-subtitle {
+  margin: 0 0 16px;
+  color: #85859b;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.expertise-page .category-heading h2 {
+  margin: 0;
+  color: #f2f0ed;
+  font: 500 clamp(20px, 2vw, 27px)/1.15 'Space Grotesk', sans-serif;
+  letter-spacing: -1px;
+}
+
+.expertise-page .category-description {
+  max-width: 260px;
+  margin-top: 10px;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.expertise-page .category-number {
+  color: #555;
+  font: 500 12px 'Space Grotesk', sans-serif;
+  letter-spacing: 1px;
+}
+
+.expertise-page .technology-grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 14px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-content: start;
+}
+
+.expertise-page .technology {
+  min-width: 0;
+  min-height: 104px;
+  padding: 14px 5px 12px;
+  gap: 10px;
+  border: 1px solid #1e1e1e;
+  border-radius: 10px;
+  background: rgba(255,255,255,.018);
+  cursor: default;
+  transform: none;
+}
+
+.expertise-page .technology:hover {
+  background: #171717;
+  border-color: #414141;
+  transform: translateY(-3px);
+}
+
+.expertise-page .technology-logo {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+}
+
+.expertise-page .technology img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.expertise-page .technology span {
+  color: #aaa;
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.expertise-page .expertise-beyond {
+  margin-top: 92px;
+  padding-top: 60px;
+  border-top: 1px solid #242424;
+}
+
+.expertise-page .expertise-beyond h2 {
+  color: #f2f0ed;
+  font: 500 clamp(32px, 5vw, 58px)/1.08 'Space Grotesk', sans-serif;
+  letter-spacing: -2.5px;
+  margin-top: 20px;
+}
+
+.expertise-page .expertise-beyond h2 span {
+  color: #85859b;
+}
+
+.expertise-page .beyond-description {
+  max-width: 620px;
+  margin-top: 18px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.expertise-page .expertise-beyond .interest-grid {
+  max-width: 900px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.expertise-page .expertise-beyond .interest-item {
+  padding: 16px 18px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.expertise-page .expertise-beyond .interest-item span {
+  display: block;
+  margin-bottom: 8px;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.expertise-page .expertise-closing {
+  margin-top: 54px;
+  padding-top: 24px;
+  border-top: 1px solid #242424;
+}
+
+.expertise-page .expertise-closing p {
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.expertise-page .expertise-closing h2 {
+  margin-top: 10px;
+  color: #eee;
+  font: 500 clamp(22px, 3vw, 32px) 'Space Grotesk', sans-serif;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 1050px) {
+  .expertise-toolkit {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-page .skill-category {
+    padding: 26px;
+  }
+
+  .expertise-page .category-heading {
+    min-height: 0;
+    margin-bottom: 14px;
+  }
+
+  .expertise-page .technology-grid {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise-page {
+    padding-top: 70px;
+  }
+
+  .expertise-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .expertise-hero-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .expertise-page .skill-category {
+    padding: 22px 16px;
+  }
+
+  .expertise-page .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expertise-page .expertise-beyond .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .expertise-page .expertise-beyond h2 {
+    letter-spacing: -1.5px;
+  }
+}
