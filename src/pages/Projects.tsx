@@ -33,7 +33,7 @@ function Projects() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View project on GitHub ↗
+            Visit live project ↗
           </a>
         </article>
       </div>
