@@ -232,7 +232,7 @@ function Home() {
             rel="noreferrer"
             className="text-link"
           >
-            View project on GitHub ↗
+            Visit live project ↗
           </a>
         </div>
       </section>
