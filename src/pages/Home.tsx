@@ -1,287 +1,125 @@
+import { lazy, Suspense, useEffect } from "react";
+import { ArrowDown, ArrowUpRight, Github, Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+const CinematicScene = lazy(() => import("../components/CinematicScene"));
+
+const chapters = [
+  { number: "01", title: "Selected work", detail: "Projects & experiments", path: "/projects" },
+  { number: "02", title: "The toolkit", detail: "Technologies & skills", path: "/expertise" },
+  { number: "03", title: "Off the grid", detail: "Creative interests & gaming", path: "/creative" },
+  { number: "04", title: "The person", detail: "A little beyond the screen", path: "/about" },
+];
 
 function Home() {
-  const [opened, setOpened] = useState(false);
-
   useEffect(() => {
-    if (!opened) return;
-
-    const elements = document.querySelectorAll(".story-reveal");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
+    const nodes = document.querySelectorAll(".chapter-reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, [opened]);
-
-  const skills = [
-    "HTML", "CSS", "JavaScript", "TypeScript",
-    "React", "Next.js", "Node.js", "Java",
-    "PHP", "Three.js", "Tailwind CSS", "GSAP",
-    "Git", "GitHub", "Figma"
-  ];
-
-  const interests = [
-    "Web Development",
-    "UI / UX Design",
-    "Gaming",
-    "Content Creation",
-    "Storytelling",
-    "Filmmaking",
-    "Photography",
-    "Cinematography"
-  ];
+  }, []);
 
   return (
-    <main className="letter-home">
-
-      {/* ENVELOPE INTRO */}
-      <section className="envelope-intro">
-        <p className="letter-eyebrow">A PERSONAL INTRODUCTION</p>
-
-        <h1>
-          A little
-          <br />
-          <span>about me.</span>
-        </h1>
-
-        <p className="letter-subtitle">
-          There's a little story waiting inside.
-        </p>
-
-        <button
-          className={`envelope-button ${opened ? "opened" : ""}`}
-          onClick={() => setOpened(true)}
-          disabled={opened}
-          aria-label="Open the envelope"
-        >
-          <div className="envelope">
-            <div className="letter-paper">
-              <span>To the curious visitor,</span>
-              <strong>Let me introduce myself.</strong>
-            </div>
-            <div className="envelope-back" />
-            <div className="envelope-front" />
-            <div className="envelope-flap" />
+    <main className="immersive-home">
+      <section className="cinematic-hero">
+        <Suspense fallback={<div className="scene-fallback" />}>
+          <CinematicScene />
+        </Suspense>
+        <div className="hero-grain" />
+        <div className="hero-coordinate">23° 01' N&nbsp;&nbsp; / &nbsp;&nbsp;72° 34' E</div>
+        <div className="hero-index">INDEPENDENT CREATIVE SPACE&nbsp; · &nbsp;EST. 2026</div>
+        <div className="cinematic-copy">
+          <p className="cinematic-kicker"><span /> DEVELOPER&nbsp; / &nbsp;CREATOR&nbsp; / &nbsp;GAMER</p>
+          <h1>Ideas take<br /><em>another form.</em></h1>
+          <p className="cinematic-intro">
+            I'm Prachi. I explore the space where technology,
+            imagination and storytelling meet.
+          </p>
+          <div className="cinematic-actions">
+            <a href="#chapters" className="enter-link">EXPLORE THE SPACE <ArrowDown size={15} /></a>
+            <Link to="/contact" className="hero-contact">LET'S CONNECT <ArrowUpRight size={14} /></Link>
           </div>
-        </button>
-
-        <p className="envelope-hint">
-          {opened ? "YOUR LETTER IS OPEN" : "CLICK TO KNOW MORE ABOUT ME"}
-        </p>
-      </section>
-
-      {/* FIRST LETTER */}
-      <section className={`personal-letter ${opened ? "visible" : ""}`}>
-        <div className="letter-sheet">
-          <p className="letter-date">A NOTE FROM PRACHI</p>
-          <h2>Hello, I'm Prachi.</h2>
-
-          <p>
-            I'm a developer, content creator and gamer.
-            I enjoy exploring technology, creativity and
-            the possibilities of the digital world.
-          </p>
-
-          <p>
-            I'm someone who learns by observing,
-            experimenting and figuring things out
-            independently. I like turning ideas into
-            something real.
-          </p>
-
-          <p className="letter-signature">
-            This is a little more about me.
-            <br />
-            Prachi.
-          </p>
+        </div>
+        <div className="hero-side-note">A DIGITAL WORLD IN PROGRESS</div>
+        <div className="hero-bottomline">
+          <span>SCROLL TO DISCOVER</span>
+          <span>AHMEDABAD, INDIA</span>
+          <span>01 — 05</span>
         </div>
       </section>
 
-      {/* WHO I AM */}
-      <section className="story-section story-reveal">
-        <p className="section-kicker">01 / BEHIND THE SCREEN</p>
-        <h2>Curious by nature.<br /><span>Creative by choice.</span></h2>
+      <section className="intro-chapter chapter-reveal" id="chapters">
+        <div className="chapter-meta"><span>00 / THE BEGINNING</span><span>A NOTE FROM PRACHI</span></div>
+        <div className="intro-layout">
+          <p className="large-index">01</p>
+          <div>
+            <p className="cinematic-kicker">A LITTLE CONTEXT</p>
+            <h2>Not here to fit<br /><em>inside a box.</em></h2>
+            <p className="chapter-description">
+              I like learning by doing, noticing the little details and
+              figuring out how things work. Some days that means writing
+              code. Other days, it's a story, a video or a new idea worth
+              exploring.
+            </p>
+            <p className="signature">Prachi Sharma <span>· ipsix</span></p>
+          </div>
+        </div>
+      </section>
 
-        <p className="story-description">
-          I'm an introvert with a curious mind and a habit
-          of exploring how things work. I enjoy learning
-          independently, experimenting with new ideas and
-          finding my own way to solve problems.
-        </p>
-
-        <div className="interest-grid">
-          {interests.map((interest) => (
-            <div className="interest-item" key={interest}>
-              {interest}
-            </div>
+      <section className="chapter-index-section">
+        <div className="chapter-heading chapter-reveal">
+          <p className="cinematic-kicker">THE JOURNEY SO FAR</p>
+          <h2>Choose a <em>chapter.</em></h2>
+          <p>Different interests. One curious mind.</p>
+        </div>
+        <div className="chapter-list">
+          {chapters.map((chapter) => (
+            <Link className="chapter-row chapter-reveal" to={chapter.path} key={chapter.number}>
+              <span className="chapter-number">{chapter.number}</span>
+              <div className="chapter-row-title"><h3>{chapter.title}</h3><p>{chapter.detail}</p></div>
+              <span className="chapter-arrow"><ArrowUpRight size={21} /></span>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* DEVELOPER */}
-      <section className="story-section developer-section story-reveal">
-        <p className="section-kicker">02 / THE DEVELOPER SIDE</p>
-        <h2>Ideas don't build themselves.</h2>
-
-        <p className="story-description">
-          My interest in development started with gaming
-          and curiosity about how digital experiences are
-          created. Since then, I've been exploring web
-          technologies and building projects while learning
-          something new along the way.
-        </p>
-
-        <div className="skills-container">
-          <p className="small-heading">TECHNOLOGIES I'VE EXPLORED</p>
-          <div className="skills-grid">
-            {skills.map((skill) => (
-              <span className="skill-tag" key={skill}>
-                {skill}
-              </span>
-            ))}
-          </div>
+      <section className="featured-world chapter-reveal">
+        <div className="featured-world-image">
+          <div className="world-orbit" />
+          <span>FIELD NOTE&nbsp; / &nbsp;001</span>
+          <strong>BUILD<br />& BEYOND.</strong>
         </div>
-
-        <p className="story-footnote">
-          Always learning. Always experimenting.
-        </p>
-      </section>
-
-      {/* CREATOR */}
-      <section className="story-section creator-section story-reveal">
-        <p className="section-kicker">03 / THE CREATIVE SIDE</p>
-        <h2>More than just code.</h2>
-
-        <p className="story-description">
-          I enjoy imagining stories, exploring visual ideas
-          and thinking about how a simple concept can turn
-          into an engaging experience. Content creation and
-          filmmaking are creative paths I want to explore
-          further.
-        </p>
-
-        <div className="creative-note">
-          <span>MY CREATIVE INTERESTS</span>
-          <h3>Storytelling · Direction · Visuals · Editing</h3>
-        </div>
-      </section>
-
-      {/* GAMER */}
-      <section className="story-section gamer-section story-reveal">
-        <p className="section-kicker">04 / THE GAMER</p>
-        <h2>Player one.<br /><span>Creator mode.</span></h2>
-
-        <p className="story-description">
-          Gaming is one of the reasons I became curious
-          about technology in the first place. Minecraft
-          is where my gaming content journey begins, but
-          there's a lot more I want to explore.
-        </p>
-
-        <a
-          className="text-link"
-          href="https://youtube.com/@i-ps-ix"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Explore IPSIX on YouTube ↗
-        </a>
-      </section>
-
-      {/* PROJECT */}
-      <section className="story-section project-section story-reveal">
-        <p className="section-kicker">05 / SOMETHING I'VE BUILT</p>
-        <h2>From an idea<br /><span>to a working project.</span></h2>
-
-        <div className="featured-project">
-          <div className="project-topline">
-            <span>01 — COLLEGE PROJECT</span>
-            <span>COMPLETED</span>
-          </div>
-
-          <h3>CampusEvents Scrapbook</h3>
-
+        <div className="featured-world-copy">
+          <p className="cinematic-kicker">A PROJECT FROM THE DESK</p>
+          <h2>Small idea.<br /><em>Real world.</em></h2>
           <p>
-            A college event management website designed
-            to make event updates and information easier
-            to access in one place.
+            CampusEvents is a frontend college project built to bring
+            event information together in one place. One of the many
+            things I'm learning by making.
           </p>
-
-          <div className="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-
-          <a
-            href="https://madebyprachi.github.io/CampusEvents-Scrapbook/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-link"
-          >
-            Visit live project ↗
+          <a href="https://madebyprachi.github.io/CampusEvents-Scrapbook/" target="_blank" rel="noreferrer">
+            VIEW PROJECT <ArrowUpRight size={15} />
           </a>
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
-      <section className="philosophy-section story-reveal">
-        <p className="section-kicker">06 / A THOUGHT I LIVE BY</p>
-
-        <h2>
-          Build it yourself.
-          <br />
-          Walk your own path.
-        </h2>
-
-        <p>
-          No one is guaranteed to walk beside you.
-          People may come and go, but your journey
-          and determination are yours. Keep building anyway.
-        </p>
-      </section>
-
-      {/* CONTACT */}
-      <section className="story-section contact-section story-reveal">
-        <p className="section-kicker">07 / THE NEXT CHAPTER</p>
-        <h2>Have something<br /><span>in mind?</span></h2>
-
-        <p className="story-description">
-          I'm open to exploring opportunities, working on
-          interesting ideas and connecting with people who
-          enjoy building things.
-        </p>
-
-        <a
-          className="contact-email"
-          href="mailto:workwithipsix@gmail.com"
-        >
-          workwithipsix@gmail.com ↗
-        </a>
-
-        <div className="social-links">
-          <a href="https://github.com/madebyprachi" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/prachi-sharma-205a24441/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://www.instagram.com/i.ps.ix/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://youtube.com/@i-ps-ix" target="_blank" rel="noreferrer">YouTube</a>
-          <a href="https://www.reddit.com/user/Sad-Pineapple-6945/" target="_blank" rel="noreferrer">Reddit</a>
-          <a href="https://x.com/ip5ix" target="_blank" rel="noreferrer">X</a>
+      <section className="closing-chapter chapter-reveal">
+        <p className="cinematic-kicker">THE NEXT CHAPTER IS UNWRITTEN</p>
+        <h2>Still curious.<br /><em>Still becoming.</em></h2>
+        <Link to="/contact">SAY HELLO <ArrowUpRight size={15} /></Link>
+        <div className="closing-socials">
+          <a href="https://github.com/madebyprachi" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
+          <a href="https://www.instagram.com/i.ps.ix/" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={17} /></a>
+          <a href="https://youtube.com/@i-ps-ix" target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube size={17} /></a>
         </div>
       </section>
-
     </main>
   );
 }
