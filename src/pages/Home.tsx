@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { ArrowDown, ArrowUpRight, Github, Instagram, Youtube } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CinematicScene = lazy(() => import("../components/CinematicScene"));
@@ -115,9 +115,9 @@ function Home() {
         <h2>Still curious.<br /><em>Still becoming.</em></h2>
         <Link to="/contact">SAY HELLO <ArrowUpRight size={15} /></Link>
         <div className="closing-socials">
-          <a href="https://github.com/madebyprachi" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={17} /></a>
-          <a href="https://www.instagram.com/i.ps.ix/" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={17} /></a>
-          <a href="https://youtube.com/@i-ps-ix" target="_blank" rel="noreferrer" aria-label="YouTube"><Youtube size={17} /></a>
+          <a href="https://github.com/madebyprachi" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+          <a href="https://www.instagram.com/i.ps.ix/" target="_blank" rel="noreferrer" aria-label="Instagram">IG</a>
+          <a href="https://youtube.com/@i-ps-ix" target="_blank" rel="noreferrer" aria-label="YouTube">YT</a>
         </div>
       </section>
     </main>
