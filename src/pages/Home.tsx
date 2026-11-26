@@ -227,7 +227,7 @@ function Home() {
           </div>
 
           <a
-            href="https://madebyprachi.github.io/CampusEvents-Scrapbook/"
+            href="https://madebyprachi.github.io/College-Event-Management/"
             target="_blank"
             rel="noreferrer"
             className="text-link"
