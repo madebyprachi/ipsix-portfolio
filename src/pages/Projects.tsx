@@ -29,7 +29,7 @@ function Projects() {
 
           <a
             className="text-link"
-            href="https://github.com/madebyprachi/CampusEvents-Scrapbook"
+            href="https://madebyprachi.github.io/CampusEvents-Scrapbook/"
             target="_blank"
             rel="noopener noreferrer"
           >
