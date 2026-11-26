@@ -227,12 +227,12 @@ function Home() {
           </div>
 
           <a
-            href="https://madebyprachi.github.io/College-Event-Management/"
+            href="https://github.com/madebyprachi/CampusEvents-Scrapbook"
             target="_blank"
             rel="noreferrer"
             className="text-link"
           >
-            View live project ↗
+            View project on GitHub ↗
           </a>
         </div>
       </section>
