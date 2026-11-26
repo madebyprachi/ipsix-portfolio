@@ -14,7 +14,7 @@ import "./index.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ipsix-portfolio">
       <div className="app">
         <Navbar />
 
