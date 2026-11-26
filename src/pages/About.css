@@ -1,0 +1,196 @@
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+  color: #f1f1f3;
+}
+
+.about-page .eyebrow {
+  color: #858590;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.about-hero {
+  min-height: 470px;
+  padding: 105px 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-hero h1 {
+  margin: 25px 0 22px;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -4px;
+  font-weight: 500;
+}
+
+.about-hero h1 span,
+.about-philosophy h2 span,
+.about-ending h2 span {
+  color: #858590;
+}
+
+.about-intro {
+  max-width: 540px;
+  color: #96969f;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.about-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 65px;
+  color: #777781;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.about-scroll .scroll-line {
+  width: 35px;
+  height: 1px;
+  background: #777781;
+}
+
+.about-focus {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-section-heading {
+  margin-bottom: 35px;
+}
+
+.about-section-heading h2 {
+  margin-top: 12px;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  font-weight: 500;
+}
+
+.about-focus-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-focus-item {
+  min-height: 140px;
+  padding: 25px 5px;
+  display: grid;
+  grid-template-columns: 65px 1fr 25px;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+.about-focus-item:hover {
+  padding-left: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.about-focus-number {
+  align-self: start;
+  padding-top: 7px;
+  color: #777781;
+  font-size: 11px;
+}
+
+.about-focus-content h3 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.about-focus-content p {
+  max-width: 540px;
+  margin-top: 9px;
+  color: #92929c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.about-focus-arrow {
+  color: #858590;
+  transition: transform 0.25s ease;
+}
+
+.about-focus-item:hover .about-focus-arrow {
+  transform: translate(3px, -3px);
+}
+
+.about-philosophy {
+  padding: 110px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.about-philosophy h2,
+.about-ending h2 {
+  margin: 25px 0;
+  font-size: clamp(35px, 5.5vw, 66px);
+  line-height: 1.2;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+}
+
+.about-philosophy > p:last-child,
+.about-ending > p:last-child {
+  max-width: 510px;
+  color: #92929c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.about-ending {
+  padding: 110px 0 125px;
+}
+
+.about-ending h2 {
+  font-size: clamp(42px, 6vw, 75px);
+}
+
+@media (max-width: 700px) {
+  .about-hero {
+    min-height: 390px;
+    padding: 75px 0 55px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .about-scroll {
+    margin-top: 45px;
+  }
+
+  .about-focus {
+    padding: 70px 0;
+  }
+
+  .about-focus-item {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 12px;
+    min-height: 130px;
+  }
+
+  .about-focus-content h3 {
+    font-size: 18px;
+  }
+
+  .about-philosophy,
+  .about-ending {
+    padding: 80px 0;
+  }
+
+  .about-philosophy h2,
+  .about-ending h2 {
+    letter-spacing: -1.5px;
+  }
+}

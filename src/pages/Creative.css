@@ -1,0 +1,377 @@
+
+.creative-page {
+  width: 100%;
+  overflow: hidden;
+  color: #f1f1f3;
+}
+
+.creative-page .eyebrow {
+  color: #858590;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.creative-hero {
+  min-height: 470px;
+  padding: 105px 0 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.creative-hero h1 {
+  margin: 25px 0 22px;
+  font-size: clamp(42px, 6.5vw, 82px);
+  line-height: 1.08;
+  letter-spacing: -4px;
+  font-weight: 500;
+}
+
+.creative-hero h1 span,
+.creative-note h2 span {
+  color: #858590;
+}
+
+.creative-intro {
+  max-width: 490px;
+  color: #96969f;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.creative-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 65px;
+  color: #777781;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.scroll-line {
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background: #777781;
+}
+
+.creative-interests,
+.creative-gaming,
+.creative-creators {
+  padding: 100px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.creative-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.creative-section-heading h2 {
+  margin-top: 12px;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  font-weight: 500;
+}
+
+.section-side-note {
+  max-width: 230px;
+  color: #858590;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.interest-card {
+  min-height: 245px;
+  padding: 27px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.018);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.interest-card:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.interest-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interest-number {
+  color: #777781;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.interest-arrow {
+  color: #858590;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.interest-card:hover .interest-arrow {
+  transform: translate(3px, -3px);
+}
+
+.interest-card h3 {
+  margin: 35px 0 12px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.interest-card > p {
+  max-width: 410px;
+  color: #92929c;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.interest-tags span {
+  padding: 6px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  color: #9b9ba4;
+  font-size: 10px;
+}
+
+.game-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-row {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 55px 1fr 180px 25px;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+.game-row:hover {
+  padding-left: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.game-number {
+  color: #777781;
+  font-size: 11px;
+}
+
+.game-row h3 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.game-category {
+  color: #858590;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+}
+
+.game-arrow {
+  color: #858590;
+  font-size: 17px;
+  text-align: right;
+}
+
+.creator-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.creator-card {
+  min-height: 180px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.018);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.creator-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.creator-index {
+  color: #777781;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.creator-card h3 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.creator-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #858590;
+  font-size: 11px;
+}
+
+.creator-link {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.creator-card:hover .creator-link {
+  transform: translate(3px, -3px);
+}
+
+.creative-note {
+  padding: 110px 0 125px;
+}
+
+.creative-note h2 {
+  margin: 22px 0;
+  font-size: clamp(38px, 6vw, 70px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+.creative-note > p:last-child {
+  max-width: 510px;
+  color: #92929c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+  .creative-hero {
+    min-height: 390px;
+    padding: 75px 0 55px;
+  }
+
+  .creative-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .creative-scroll {
+    margin-top: 45px;
+  }
+
+  .creative-interests,
+  .creative-gaming,
+  .creative-creators {
+    padding: 70px 0;
+  }
+
+  .creative-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-side-note {
+    text-align: left;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-card {
+    min-height: 220px;
+  }
+
+  .game-row {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 10px;
+    min-height: 75px;
+  }
+
+  .game-category {
+    display: none;
+  }
+
+  .creator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creator-card {
+    min-height: 150px;
+  }
+
+  .creative-note {
+    padding: 80px 0 90px;
+  }
+
+  .creative-note h2 {
+    letter-spacing: -2px;
+  }
+}
+
+
+/* Creative note section fix */
+.creative-note {
+  box-sizing: border-box;
+  padding: 85px 55px 90px;
+  overflow: hidden;
+}
+
+.creative-note h2 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.creative-note h2 span {
+  display: block;
+  color: #858590;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.creative-note > p:last-child {
+  max-width: 510px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+  .creative-note {
+    padding: 55px 24px 65px;
+  }
+}
