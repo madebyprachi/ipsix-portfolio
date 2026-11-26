@@ -26,6 +26,15 @@ function Projects() {
           </p>
 
           <small>HTML · CSS · JavaScript</small>
+
+          <a
+            className="text-link"
+            href="https://madebyprachi.github.io/College-Event-Management/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View live project ↗
+          </a>
         </article>
       </div>
     </main>
