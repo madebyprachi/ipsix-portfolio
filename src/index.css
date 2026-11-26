@@ -1361,3 +1361,142 @@ footer {
     letter-spacing: -1.5px;
   }
 }
+
+
+/* EXPERTISE: FOUR-PANEL LAYOUT */
+.expertise-page .expertise-toolkit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.expertise-page .skill-category {
+  min-width: 0;
+  padding: 28px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #262626;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #111 0%, #0b0b0b 100%);
+}
+
+.expertise-page .category-heading {
+  min-height: 116px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.expertise-page .category-heading .skill-subtitle {
+  margin: 0 0 15px;
+}
+
+.expertise-page .category-heading h2 {
+  margin: 0;
+  color: #f2f0ed;
+  font: 500 clamp(21px, 2vw, 27px)/1.15 'Space Grotesk', sans-serif;
+  letter-spacing: -1px;
+}
+
+.expertise-page .category-description {
+  max-width: 330px;
+  margin-top: 10px;
+  color: #858585;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.expertise-page .category-number {
+  color: #555;
+  font: 500 12px 'Space Grotesk', sans-serif;
+}
+
+.expertise-page .technology-list,
+.expertise-page .beyond-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #242424;
+}
+
+.expertise-page .technology-row {
+  width: 100%;
+  min-height: 55px;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 4px;
+  border-bottom: 1px solid #202020;
+}
+
+.expertise-page .technology-logo {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.expertise-page .technology-logo img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.expertise-page .technology-name {
+  color: #d0ced6;
+  font-size: 13px;
+}
+
+.expertise-page .technology-index,
+.expertise-page .beyond-row > span:first-child {
+  color: #666;
+  font: 10px 'Space Grotesk', sans-serif;
+  letter-spacing: 1px;
+}
+
+.expertise-page .beyond-row {
+  min-height: 55px;
+  display: grid;
+  grid-template-columns: 34px 1fr 20px;
+  align-items: center;
+  gap: 13px;
+  padding: 8px 4px;
+  border-bottom: 1px solid #202020;
+}
+
+.expertise-page .beyond-row p {
+  color: #d0ced6;
+  font-size: 13px;
+}
+
+.expertise-page .beyond-mark {
+  color: #777;
+  font-size: 15px;
+  text-align: right;
+}
+
+.expertise-page .expertise-closing {
+  margin-top: 50px;
+}
+
+@media (max-width: 760px) {
+  .expertise-page .expertise-toolkit {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .expertise-page .skill-category {
+    padding: 23px 19px;
+  }
+
+  .expertise-page .category-heading {
+    min-height: 0;
+    margin-bottom: 18px;
+  }
+}
